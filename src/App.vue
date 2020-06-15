@@ -1,32 +1,61 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+	  <router-view class="main"></router-view>
+	  <Nav v-show="!hideNav" :activeName="activeName"></Nav>
   </div>
 </template>
+<script>
+	import Nav from "./components/Nav.vue"
+	export default{
+		data(){
+			return {
+				hideNav:false,
+				activeName:""
+			}
+		},
+		components:{
+			Nav
+		},
+		watch:{
+			$route(){
+				if(this.$route.meta.hideNav){
+					this.hideNav = true
+				}else{
+					this.hideNav = false
+				}
+				this.activeName =  this.$route.name
+			}
+		}
+	}
+</script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+html,body,#app{
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
-
-#nav {
-  padding: 30px;
+#app{
+	display: flex;
+	flex-direction: column;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.main{
+	flex: 1;
+	overflow: auto;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+a{
+	color: black;
+	text-decoration: none;
+}
+.btn{
+	border: none;
+	background-color: #D81E06;
+	color: white;
+	width: 75%;
+	margin: 1rem auto;
+	display: block;
+	font-size: 1.2rem;
+	text-align: center;
+	height: 2.4rem;
 }
 </style>
