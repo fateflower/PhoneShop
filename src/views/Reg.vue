@@ -6,7 +6,7 @@
 		<input placeholder="请输入昵称" class="ipt" v-model="nName">
 		<input placeholder="请输入密码" class="ipt" type="password" v-model="pVal">
 		<div class="File-Box">
-		<input type="file" @change="changepic(this)" id="file" ref="fileInt">
+		<input type="file" @change="changepic()" id="file" ref="fileInt">
 		<div class="Show-Box">
 		    <span>+</span>
 		    <span>选择文件</span>
@@ -21,7 +21,6 @@
 
 <script>
 	import {post} from "../utils/request";
-	import {postHead} from "../utils/request";
 	export default{
 		data(){
 			return{
@@ -47,19 +46,20 @@
 					console.log(err)
 				})
 			},
-			changepic(obj){
+			changepic(){
+				console.log(this)
 				var yulan  = this.$refs
 				var file= yulan.fileInt.files[0]
-				
+				console.log(file)
 				var data = new FormData()
 				data.append('file',file)
 				
-				postHead("/api/v1/common/file_upload",data,{
+				post("/api/v1/common/file_upload",data,{
 					headers:{
 						'Content-Type':'multipart/from-data'
 					}
 				}).then((res)=>{
-					console.log(res.data.info)
+					console.log(res)
 					this.avatar = res.data.info
 				}).catch((err)=>{
 					console.log(err)
