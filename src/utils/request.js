@@ -39,8 +39,7 @@ instance.interceptors.response.use(
     // console.dir(error);
     // 当服务器返回401状态码的时候跳转到登录页
     if (error.response.status == 401) {
-		localStorage.removeItem("token")
-		window.location.href = "#/login";
+      window.location.href = "#/login";
     }
     return Promise.reject(error);
   }
