@@ -159,6 +159,9 @@
         </a>
       </div>
     </div>
+	<div class="like">
+		<h1><img src="https://s10.mogucdn.com/mlcdn/c45406/190426_4hlfgkc2ceaea67422ag73077lfce_1611x166.png_1200x9999.v1c7E.81.webp" alt=""></h1>
+	</div>
     <div class="hot">
       <Goods v-for="item in list" :key="item._id" :product="item"></Goods>
     </div>
@@ -259,5 +262,14 @@ export default {
   width: 50px;
   height: 50px;
   margin: 0 auto;
+}
+.like{
+	width: 100%;
+	height: 2.6rem;
+}
+.like h1,.like img{
+	width: 100%;
+	height: 100%;
+	display: block;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view class="main"></router-view>
-    <Nav v-show="!hideNav"></Nav>
+    <Nav v-show="!hideNav" :activeName="activeName"></Nav>
   </div>
 </template>
 <script>
@@ -10,6 +10,7 @@ export default {
   data() {
     return {
       hideNav: false,
+      activeName:"Home"
     };
   },
   components: {
@@ -22,6 +23,8 @@ export default {
       } else {
         this.hideNav = false;
       }
+	  console.log(this.$route)
+      this.activeName = this.$route.name;
     }
   }
 };

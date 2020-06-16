@@ -1,10 +1,10 @@
 <template>
 	<div class="nav">	
 		<van-tabbar v-model="active" @change="onChange">
-		  <van-tabbar-item icon="home-o" name="Home">标签1</van-tabbar-item>
-		  <van-tabbar-item icon="fire-o" name="List">标签2</van-tabbar-item>
-		  <van-tabbar-item icon="cart-o" name="Cart">标签3</van-tabbar-item>
-		  <van-tabbar-item icon="user-circle-o" name="User">标签4</van-tabbar-item>
+		  <van-tabbar-item icon="wap-home-o" name="Home">首页</van-tabbar-item>
+		  <van-tabbar-item icon="fire-o" name="List">热卖</van-tabbar-item>
+		  <van-tabbar-item icon="cart-o" name="Cart">购物车</van-tabbar-item>
+		  <van-tabbar-item icon="user-circle-o" name="User">我的</van-tabbar-item>
 		</van-tabbar>
 	</div>
 </template>
@@ -15,6 +15,12 @@
 		data() {
 			return {
 				active: "Home"
+			}
+		},
+		props:["activeName"],
+		watch:{
+			$route(){
+				this.active = this.activeName
 			}
 		},
 		methods:{
