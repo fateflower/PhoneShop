@@ -5,6 +5,7 @@
       <img src="https://imgs-qn.iliangcang.com/ware/sowhatimg/ware/orig/2/29/29910.png" alt />
     </main>
     <div class="logo">
+      <div></div>
       <img src="https://imgs-qn.iliangcang.com/ware/sowhatimg/ware/orig/2/23/23442.png" alt />
     </div>
     <div class="yb">
@@ -86,18 +87,39 @@
       </dl>
       <dl></dl>
     </div>
-    <div class="button">底部结账</div>
+    <div class="button">
+      <!-- <img :src="selectIndex==0?che.default:che.selected" alt @click="tapPage(0)" /> -->
+      <input type="checkbox" class="xz" />
+      <div class="checked">选中全部</div>
+      <p>合计:￥</p>
+      <span>123</span>
+      <button class="an">结算</button>
+    </div>
   </div>
 </template>
 
 <script>
-	export default{
-		methods: {
-		  onClickLeft() {
-		    window.history.go(-1);
-		  }
-		}
-	}
+export default {
+  data() {
+    return {
+      che: {
+        default:
+          "https://imgs-qn.iliangcang.com/ware/sowhatimg/ware/orig/2/23/23440.png",
+        selected:
+          "https://imgs-qn.iliangcang.com/ware/sowhatimg/ware/orig/2/23/23441.png"
+      },
+      selectIndex: 0
+    };
+  },
+  methods: {
+    onClickLeft() {
+      window.history.go(-1);
+    }
+    // tapPage(index) {
+    //   this.selectIndex = 0;
+    // }
+  }
+};
 </script>
 
 <style scoped>
@@ -138,6 +160,7 @@ main img {
 .yb {
   height: 500px;
   width: 100%;
+  padding-bottom: 100px;
 }
 .tup {
   width: 90%;
@@ -145,7 +168,7 @@ main img {
 }
 .yb dl {
   width: 50%;
-  padding-bottom: 70px;
+  /* padding-bottom: 70px; */
   /* border: solid 5px rgb(250, 250, 250); */
 }
 .price {
@@ -188,9 +211,38 @@ main img {
 }
 .button {
   width: 100%;
-  height: 40px;
+  height: 50px;
   background: red;
   position: fixed;
   bottom: 46px;
+  display: flex;
+}
+.button p {
+  line-height: 50px;
+}
+.button span {
+  line-height: 50px;
+}
+.xz {
+  margin: 10px 8px;
+  height: 25px;
+  width: 25px;
+}
+.checked {
+  /* float: left; */
+  flex: 1;
+  margin: 10px 8px;
+}
+.an {
+  color: #ffffff;
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 14px;
+  background: #000000;
+  margin-right: 6px;
+  margin-top: 4px;
+  float: right;
 }
 </style>

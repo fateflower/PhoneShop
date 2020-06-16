@@ -34,35 +34,37 @@
 </script>
 
 <style scoped>
-	.nav,.nav ul{
-		width: 100%;
-		height: 46px;
-	}
-	.nav{
-		border-top: solid #999 0.02rem;
-	}
-	.nav ul,.nav li{
-		margin: 0;
-		padding: 0;
-	}
-	.nav ul{
-		display:  flex;
-		align-items: center;
-		justify-content: space-around;
-	}
-	.nav li {
-		list-style: none;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		font-weight: bold;
-		font-size: 0.8rem;
-	}
-	.nav img{
-		width: 24px;
-	}
-	.nav li.active {
-	  color: #d81e06;
-	}
+.nav,
+.nav ul {
+  width: 100%;
+  height: 46px;
+}
+.nav {
+  border-top: solid #999 0.02rem;
+}
+.nav ul,
+.nav li {
+  margin: 0;
+  padding: 0;
+}
+.nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.nav li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.nav img {
+  width: 24px;
+}
+.nav li.active {
+  color: #d81e06;
+}
 </style>
