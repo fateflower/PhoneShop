@@ -23,7 +23,7 @@
 				list:[],
 				pages:1,
 				page:1,
-				per:4,
+				per:8,
 				isLoading:false
 			}
 		},
