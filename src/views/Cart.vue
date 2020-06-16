@@ -5,7 +5,6 @@
       <img src="https://imgs-qn.iliangcang.com/ware/sowhatimg/ware/orig/2/29/29910.png" alt />
     </main>
     <div class="logo">
-      <div></div>
       <img src="https://imgs-qn.iliangcang.com/ware/sowhatimg/ware/orig/2/23/23442.png" alt />
     </div>
     <div class="yb">
@@ -87,14 +86,10 @@
       </dl>
       <dl></dl>
     </div>
-    <div class="button">
-      <!-- <img :src="selectIndex==0?che.default:che.selected" alt @click="tapPage(0)" /> -->
-      <input type="checkbox" class="xz" />
-      <div class="checked">选中全部</div>
-      <p>合计:￥</p>
-      <span>123</span>
-      <button class="an">结算</button>
-    </div>
+    
+	  <van-submit-bar :price="3050" button-text="提交订单" @submit="onSubmit">
+	    <van-checkbox v-model="checked">全选</van-checkbox>
+	  </van-submit-bar>
   </div>
 </template>
 
@@ -108,13 +103,17 @@ export default {
         selected:
           "https://imgs-qn.iliangcang.com/ware/sowhatimg/ware/orig/2/23/23441.png"
       },
-      selectIndex: 0
+      selectIndex: 0,
+	  checked:true
     };
   },
   methods: {
     onClickLeft() {
       window.history.go(-1);
-    }
+    },
+	onSubmit(){
+		console.log("提交成功")
+	}
     // tapPage(index) {
     //   this.selectIndex = 0;
     // }
@@ -135,7 +134,7 @@ export default {
 }
 main {
   width: 100%;
-  height: 250px;
+  height: 18.75rem;
   background-color: rgb(250, 250, 250);
   overflow: hidden;
   margin-left: auto;
@@ -144,18 +143,18 @@ main {
 }
 main img {
   width: 200px;
-  height: 110px;
+  height: 8.2rem;
   margin-top: 80px;
 }
 .logo {
   width: 100%;
-  height: 30px;
+  height: 1rem;
   text-align: center;
+  margin-top: 10px;
 }
 .logo img {
-  width: 100px;
-  height: 20px;
-  margin-top: 10px;
+	width: 20%;
+	height: 100%;
 }
 .yb {
   height: 500px;
@@ -209,20 +208,7 @@ main img {
   font-size: 10px;
   color: #5b5a5a;
 }
-.button {
-  width: 100%;
-  height: 50px;
-  background: red;
-  position: fixed;
-  bottom: 46px;
-  display: flex;
-}
-.button p {
-  line-height: 50px;
-}
-.button span {
-  line-height: 50px;
-}
+
 .xz {
   margin: 10px 8px;
   height: 25px;
@@ -244,5 +230,12 @@ main img {
   margin-right: 6px;
   margin-top: 4px;
   float: right;
+}
+.van-submit-bar__bar{
+	position: fixed;
+	bottom: 49px;
+	background-color: white;
+	width: 90%;
+	padding: 0 21px;
 }
 </style>
