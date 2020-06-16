@@ -1,6 +1,6 @@
 <template>
   <div class="cart">
-    <header>购物车</header>
+    <van-nav-bar title="购物车" left-text="返回" left-arrow @click-left="onClickLeft" />
     <main>
       <img src="https://imgs-qn.iliangcang.com/ware/sowhatimg/ware/orig/2/29/29910.png" alt />
     </main>
@@ -91,6 +91,13 @@
 </template>
 
 <script>
+	export default{
+		methods: {
+		  onClickLeft() {
+		    window.history.go(-1);
+		  }
+		}
+	}
 </script>
 
 <style scoped>
@@ -103,16 +110,6 @@
 }
 .cart {
   position: relative;
-}
-header {
-  width: 100%;
-  height: 50px;
-  text-align: center;
-  line-height: 50px;
-  color: #333333;
-  font-size: 14px;
-  background-color: #ffffff;
-  color: #333333;
 }
 main {
   width: 100%;
