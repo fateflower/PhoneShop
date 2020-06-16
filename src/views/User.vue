@@ -19,12 +19,11 @@
 		  <van-cell title="账号" isLink :value="userName" />
 		  <van-cell title="个人简介" isLink value="每天早晨起床时,那种困顿..." />
 		</van-cell-group>
+		<van-button round type="info" size="large" color="#e54d42">退出登录</van-button>
 	</div>
 </template>
 
 <script>
-	import { Toast } from 'vant';
-	
 	import {get} from "../utils/request.js"
 	export default{
 		data(){
@@ -57,5 +56,8 @@
 <style scoped>
 	.van-image--round{
 		margin:0 auto;display:block
+	}
+	.van-button{
+		margin-top:3rem;
 	}
 </style>
