@@ -86,10 +86,10 @@
       </dl>
       <dl></dl>
     </div>
-    
-	  <van-submit-bar :price="3050" button-text="提交订单" @submit="onSubmit">
-	    <van-checkbox v-model="checked">全选</van-checkbox>
-	  </van-submit-bar>
+
+    <van-submit-bar :price="3050" button-text="提交订单" @submit="onSubmit">
+      <van-checkbox v-model="checked">全选</van-checkbox>
+    </van-submit-bar>
   </div>
 </template>
 
@@ -104,16 +104,16 @@ export default {
           "https://imgs-qn.iliangcang.com/ware/sowhatimg/ware/orig/2/23/23441.png"
       },
       selectIndex: 0,
-	  checked:true
+      checked: true
     };
   },
   methods: {
     onClickLeft() {
       window.history.go(-1);
     },
-	onSubmit(){
-		console.log("提交成功")
-	}
+    onSubmit() {
+      console.log("提交成功");
+    }
     // tapPage(index) {
     //   this.selectIndex = 0;
     // }
@@ -153,8 +153,8 @@ main img {
   margin-top: 10px;
 }
 .logo img {
-	width: 20%;
-	height: 100%;
+  width: 20%;
+  height: 100%;
 }
 .yb {
   height: 500px;
@@ -231,11 +231,11 @@ main img {
   margin-top: 4px;
   float: right;
 }
-.van-submit-bar__bar{
-	position: fixed;
-	bottom: 49px;
-	background-color: white;
-	width: 90%;
-	padding: 0 21px;
+.van-submit-bar__bar {
+  position: fixed;
+  bottom: 49px;
+  background-color: white;
+  width: 90%;
+  padding: 0 21px;
 }
 </style>
