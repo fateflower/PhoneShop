@@ -3,7 +3,14 @@
     <van-nav-bar title="个人资料" left-text="返回" left-arrow @click-left="onClickLeft" />
     <!-- @click-right="onClickRight"right-text="详情" -->
     <van-cell-group>
-      <van-image round width="10rem" height="10rem" :src="imgUrl" />
+      <!-- <van-image round width="10rem" height="10rem" :src="imgUrl" /> -->
+
+      <van-field name="uploader" label>
+        <template #input>
+          <van-uploader v-model="uploader" />
+        </template>
+      </van-field>
+
       <van-cell title="昵称" isLink :value="nickName" />
       <van-cell title="性别" isLink :value="sex" @click="sexshow = true" />
       <van-popup v-model="sexshow" position="bottom" :style="{ height: '30%' }">
@@ -56,7 +63,21 @@
 </template>
 
 <script>
+import Vue from "vue";
+import { Form } from "vant";
+
+Vue.use(Form);
+
 import { get } from "../utils/request.js";
+
+// export default {
+//   data() {
+//     return {
+//       uploader: [{ url: "https://img.yzcdn.cn/vant/leaf.jpg" }]
+//     };
+//   }
+// };
+
 const coupon = {
   available: 1,
   condition: "无使用门槛\n最多优惠12元",
@@ -71,7 +92,7 @@ const coupon = {
 export default {
   data() {
     return {
-      imgUrl: "",
+      uploader: [{ url: "" }],
       nickName: "",
       userName: "",
       show: false,
