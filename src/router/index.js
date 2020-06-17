@@ -83,6 +83,16 @@ const routes = [
 		path: '/dizhi',
 		name: 'Dizhi',
 		component: () => import("../dataa/Dizhi.vue"),
+	},
+	{
+		path: '/xinyuan',
+		name: 'Xinyuan',
+		component: () => import("../dataa/Xinyuan.vue"),
+	},
+	{
+		path: '/yemian',
+		name: 'Yemian',
+		component: () => import("../dataa/Yemian.vue"),
 	}
 ]
 
