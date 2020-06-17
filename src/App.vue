@@ -10,7 +10,7 @@ export default {
   data() {
     return {
       hideNav: false,
-      activeName:"Home"
+      activeName: "Home"
     };
   },
   components: {
@@ -23,7 +23,7 @@ export default {
       } else {
         this.hideNav = false;
       }
-	  console.log(this.$route)
+      console.log(this.$route);
       this.activeName = this.$route.name;
     }
   }
