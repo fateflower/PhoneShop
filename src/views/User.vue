@@ -1,6 +1,13 @@
 <template>
   <div class="user">
-    <van-nav-bar title="个人资料" left-text="返回" left-arrow @click-left="onClickLeft" />
+    <van-nav-bar
+      title="个人资料"
+      left-text="返回"
+      left-arrow
+      @click-left="onClickLeft"
+      right-text="详情"
+      @click-right="onclickRight"
+    />
     <!-- @click-right="onClickRight"right-text="详情" -->
     <van-cell-group>
       <!-- <van-image round width="10rem" height="10rem" :src="imgUrl" /> -->
@@ -127,9 +134,9 @@ export default {
     onClickLeft() {
       window.history.go(-1);
     },
-    // onClickRight() {
-
-    // },
+    onclickRight() {
+      this.$router.push({ path: "/yemian" });
+    },
     close() {
       localStorage.removeItem("token");
       this.$router

@@ -13,6 +13,10 @@ const routes = [
 		path: '/',
 		name: 'Home',
 		component: Home
+	}, {
+		path: '/best',
+		name: 'Best',
+		component: () => import("../views/Best.vue"),
 	},
 	{
 		path: '/list',
@@ -93,7 +97,17 @@ const routes = [
 		path: '/yemian',
 		name: 'Yemian',
 		component: () => import("../dataa/Yemian.vue"),
-	}
+	},
+	{
+		path: '/xinzeng',
+		name: 'Xinzeng',
+		component: () => import("../dataa/Xinzeng.vue"),
+	},
+	{
+		path: '/order', name: 'order',
+		component: () => import("../dataa/order.vue")
+	},
+
 ]
 
 const router = new VueRouter({

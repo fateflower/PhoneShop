@@ -1,12 +1,13 @@
 <template>
   <div class="user">
+    <van-nav-bar left-text="返回" left-arrow @click-left="onClickLeft"></van-nav-bar>
     <div class="header">
       <div class="header-img">
         <img src alt />
       </div>
       <div class="header-name">154548787</div>
     </div>
-    <router-link class="order" to="/user/order">
+    <router-link class="order" to="/order">
       <div class="my-order">我的订单</div>
       <div class="all-order">全部订单</div>
     </router-link>
@@ -15,10 +16,7 @@
         <i class="iconfont icon-gouwuche1"></i>
         <span>待付款</span>
       </li>
-      <li>
-        <i class="iconfont icon-wodeyouhuiquan"></i>
-        <span>优惠劵</span>
-      </li>
+
       <li>
         <i class="iconfont icon-collection_fill"></i>
         <span>收藏</span>
@@ -29,16 +27,12 @@
         <i class="iconfont icon-jushoucang"></i>
         <div class="items-info">会员中心</div>
       </li>
-      <router-link to="../Dizhi" tag="li">
+      <router-link to="../Xinzeng" tag="li">
         <i class="iconfont icon-shouhuodizhi"></i>
         <div class="items-info">收货地址</div>
       </router-link>
     </ul>
     <ul class="items">
-      <router-link to="/user/xscroll" tag="li">
-        <i class="iconfont icon-wodeyouhuiquan"></i>
-        <div class="items-info">我的优惠</div>
-      </router-link>
       <li>
         <i class="iconfont icon-wodefankui"></i>
         <div class="items-info">我的意见</div>
@@ -70,16 +64,16 @@ export default {
     // this.$store.commit('footerShow',true)
     //       this.$store.commit('headerShow',{header:false})
   },
-  methods: {},
+  methods: {
+    onClickLeft() {
+      window.history.go(-1);
+    }
+  },
   computed: {},
   components: {}
 };
 </script>
 <style scoped>
-body {
-  /* height: 100%; */
-  font-size: 0.32rem;
-}
 .user {
   position: fixed;
   top: 0;
@@ -97,7 +91,7 @@ body {
 .header-img {
   margin: 0 0.16rem 0 0.32rem;
   width: 0.96rem;
-  height: 0.96rem;
+  height: 1.2rem;
   overflow: hidden;
   box-sizing: border-box;
   border-radius: 100%;
@@ -174,7 +168,7 @@ body {
   padding-left: 1.12rem;
 }
 .items li > div {
-  height: 1.04rem;
+  height: 2.04rem;
   display: -webkit-box;
   box-align: center;
   -webkit-box-align: center;

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <van-nav-bar title="新增地址" left-text="返回" left-arrow @click-left="onClickLeft"></van-nav-bar>
     <van-address-edit
       :area-list="areaList"
       show-postal
@@ -43,6 +44,9 @@ export default {
       } else {
         this.searchResult = [];
       }
+    },
+    onClickLeft() {
+      window.history.go(-1);
     }
   }
 };
