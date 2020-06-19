@@ -31,6 +31,7 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import { post } from "../utils/request";
 import { Notify } from "vant";
 import { Toast } from "vant";
@@ -117,6 +118,101 @@ export default {
     }
   }
 };
+=======
+	import {
+		post
+	} from "../utils/request";
+	import {
+		Notify
+	} from 'vant';
+	import { Toast } from 'vant';
+	export default {
+		data() {
+			return {
+				tVal: "",
+				pVal: "",
+				nName: "",
+				avatar: "",
+				data:"",
+				checked: false,
+			};
+		},
+		methods: {
+			reg() {
+				if (!this.tVal) {
+					Notify("用户名不能为空");
+				} else if (!this.nName) {
+					Notify("请输入昵称");
+				} else if (!this.pVal) {
+					Notify("请输入密码");
+				} else if (!this.checked) {
+					Notify("请阅读并勾选用户服务协议");
+				} else {
+					Toast.loading({
+						message: '注册中...',
+						forbidClick: true,
+					});
+					post("/api/v1/common/file_upload",this.data, {
+							headers: {
+								"Content-Type": "multipart/from-data"
+							}
+						})
+						.then(res => {
+							console.log(res);
+							this.avatar = res.data.info;
+							post("/api/v1/auth/reg", {
+									userName: this.tVal,
+									password: this.pVal,
+									nickName: this.nName,
+									avatar: this.avatar
+								})
+								.then(res => {
+									Toast.clear()
+									console.log(res.data)
+									if (res.data.code == "error") {
+										Notify(res.data.message);
+									} else if (res.data.code == "success") {
+										this.$router.push({
+											name: "Login"
+										});
+									}
+								})
+								.catch(err => {
+									Toast.clear()
+									Notify("注册失败，请稍后重试");
+								});
+
+						})
+						.catch((err) => {
+							Toast.clear()
+							if(err.toJSON().message == "Request failed with status code 500"){
+								Notify("请上传头像");
+							}else if(err.toJSON().message == "Request failed with status code 413"){
+								Notify("图片过大，请更换其他图片进行上传");
+							}else{
+								Notify("err");
+							}
+						});
+
+				}
+
+			},
+			changepic() {
+				var yulan = this.$refs;
+				var file = yulan.fileInt.files[0];
+				this.data = new FormData();
+				this.data.append("file", file)
+
+				var reads = new FileReader();
+				reads.readAsDataURL(file);
+
+				reads.onload = function(e) {
+					yulan.yuImg.src = this.result;
+				};
+			}
+		}
+	};
+>>>>>>> 00f7f449a722256d5ef01115050993adbf79bd56
 </script>
 
 <style scoped>

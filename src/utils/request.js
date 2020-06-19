@@ -2,7 +2,8 @@ import axios from "axios";
 import { getToken } from "./auth.js";
 const instance = axios.create({
 	timeout:10000,
-	baseURL:"http://api.cat-shop.penkuoer.com"
+	baseURL:"http://api.cat-shop.penkuoer.com",
+	withCredentials: false
 })
 // Add a request interceptor
 // 全局请求拦截，作用是当所有的ajax请求发起之前先执行这个方法

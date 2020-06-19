@@ -82,6 +82,7 @@ const routes = [{
 		name: 'dizhi',
 		component: dizhi,
 	}, {
+<<<<<<< HEAD
 		path: 'xinxi',
 		name: 'xinxi',
 		component: xinxi,
@@ -117,6 +118,88 @@ const routes = [{
 	name: 'Sousuor',
 	component: () => import("../dataa/Sousuo.vue")
 },
+=======
+		path: '/user',
+		name: 'User',
+		component: () => import("../views/User.vue"),
+		meta: {
+			needLogin: true
+		}
+	}, {
+		path: '/login',
+		name: 'Login',
+		component: () => import("../views/Login.vue"),
+		meta: {
+			hideNav: true
+		}
+	},
+	{
+		path: '/cart',
+		name: "Cart",
+		component: () => import("../views/Cart.vue"),
+		meta: {
+			needLogin: true
+		}
+	},
+	{
+		path: '/detail/:id',
+		name: 'Detail',
+		component: () => import("../views/Detail.vue"),
+		meta: {
+			hideNav: true
+		}
+	},
+	{
+		path: '/reg',
+		name: 'Reg',
+		component: () => import("../views/Reg.vue"),
+		meta: {
+			hideNav: true
+		}
+	},
+	{
+		path: '/data',
+		name: 'Data',
+		component: () => import("../views/Data.vue"),
+		meta: {
+			hideNav: true
+		},
+		children: [{
+			path: 'dizhi',
+			name: 'dizhi',
+			component: dizhi,
+		}, {
+			path: 'xinxi',
+			name: 'xinxi',
+			component: xinxi,
+		}],
+	},
+	{
+		path: '/dizhi',
+		name: 'Dizhi',
+		component: () => import("../dataa/Dizhi.vue"),
+	},
+	{
+		path: '/xinyuan',
+		name: 'Xinyuan',
+		component: () => import("../dataa/Xinyuan.vue"),
+	},
+	{
+		path: '/yemian',
+		name: 'Yemian',
+		component: () => import("../dataa/Yemian.vue"),
+	},
+	{
+		path: '/xinzeng',
+		name: 'Xinzeng',
+		component: () => import("../dataa/Xinzeng.vue"),
+	},
+	{
+		path: '/order',
+		name: 'order',
+		component: () => import("../dataa/order.vue")
+	},
+>>>>>>> 00f7f449a722256d5ef01115050993adbf79bd56
 
 ]
 
