@@ -5,8 +5,6 @@
         <a id="aImg">
           <img src="https://imgs-qn.iliangcang.com/ware/sowhatimg/ware/orig/2/31/31650.png" alt />
         </a>
-
-<<<<<<< HEAD
         <a id="close" @click="closeTop">
           <img src="https://imgs-qn.iliangcang.com/ware/sowhatimg/ware/orig/2/31/31649.png" alt />
         </a>
@@ -175,181 +173,29 @@
         />
       </h1>
     </div>
-    <div class="hot">
-      <ul class="list">
-        <li v-for="item in list" :key="item._id">
-          <dl style="margin-top:10px;float:left">
-            <dt>
-              <a href="www">
-                <img class="tup" :src="item.img" alt />
-              </a>
-            </dt>
-            <div class="xq">
-              <a href="https://www.iliangcang.com/i/goods/?id=280069">
-                <div class="sm">{{item.intro}}</div>
-              </a>
-              <div class="jx">历史价格￥{{item.pre_price}}</div>
-              <div class="price">￥{{item.price}}</div>
-            </div>
-          </dl>
-        </li>
-      </ul>
-    </div>
+    <Mygoods></Mygoods>
   </div>
 </template>
-
 <script>
-import axios from "axios";
 export default {
-  name: "Home",
-  data() {
-    return {
-      list: []
-    };
-  },
-  created() {
-    axios.get("http://192.168.18.65:3000/goods").then(res => {
-      console.log(res.data);
-      res = res.data;
-      if (res.code === 0) {
-        this.list = res.data;
-      }
-    });
+  components: {
+    Mygoods: () => import("../components/Mygoods.vue")
   },
   methods: {
     closeTop() {
       this.$refs.abc.style.display = "none";
     },
     onFocus() {
-      this.$router.push("Sousuo");
-      console.log("跳转至搜索页");
+      this.$router
+        .push({
+          name: "Sousuor"
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
 };
-=======
-				<a id="close" @click="closeTop">
-					<img src="https://imgs-qn.iliangcang.com/ware/sowhatimg/ware/orig/2/31/31649.png" alt />
-				</a>
-			</div>
-		</header>
-		<van-search placeholder="请输入搜索关键词" input-align="left" shape="round" background="#fff" @focus="onFocus" />
-		<van-swipe class="my-swipe" :autoplay="2000" indicator-color="white">
-			<van-swipe-item>
-				<img src="https://imgs-qn.iliangcang.com/ware/sowhatimg/ware/orig/2/35/35390.gif" class="ad" />
-			</van-swipe-item>
-			<van-swipe-item>
-				<img src="https://imgs-qn.iliangcang.com/ware/sowhatimg/ware/orig/2/35/35413.jpg" class="ad" />
-			</van-swipe-item>
-			<van-swipe-item>
-				<img src="https://imgs-qn.iliangcang.com/ware/sowhatimg/ware/orig/2/35/35373.jpg" class="ad" />
-			</van-swipe-item>
-		</van-swipe>
-		<div class="res">
-			<div class="res_wrap">
-				<a href>
-					<img src="https://s10.mogucdn.com/mlcdn/c45406/200603_24e84hccbg43c75g35d8hk792jf19_135x135.gif_640x640.v1cAC.40.webp"
-					alt class="res_img" />
-					<div class="res_title">新人福利</div>
-				</a>
-				<a href>
-					<img src="https://s10.mogucdn.com/mlcdn/c45406/200522_3gg7195aff5ldk8d73hlljgggl5a5_135x135.png_640x640.v1cAC.40.webp"
-					alt class="res_img" />
-					<div class="res_title">女装</div>
-				</a>
-				<a href>
-					<img src="https://s10.mogucdn.com/mlcdn/c45406/200522_5ike1d2c4acjkb7j6baid50ila4f5_135x135.png_640x640.v1cAC.40.webp"
-					alt class="res_img" />
-					<div class="res_title">女鞋</div>
-				</a>
-				<a href>
-					<img src="https://s10.mogucdn.com/mlcdn/c45406/200603_7g5g8bj3k5i8b1hjdgi6dj6kfg329_135x135.png_640x640.v1cAC.40.webp"
-					alt class="res_img" />
-					<div class="res_title">上衣</div>
-				</a>
-				<a href>
-					<img src="https://s10.mogucdn.com/mlcdn/c45406/200522_74951kjh1l8eafc21115jh2a2j3ke_135x135.png_640x640.v1cAC.40.webp"
-					alt class="res_img" />
-					<div class="res_title">美妆/个护</div>
-				</a>
-			</div>
-			<div class="res_wrap">
-				<a href>
-					<img src="https://s10.mogucdn.com/mlcdn/c45406/200603_6i6fh97b332k1652ehih9056balkb_135x135.png_640x640.v1cAC.40.webp"
-					alt class="res_img" />
-					<div class="res_title">裤子</div>
-				</a>
-				<a href>
-					<img src="https://s10.mogucdn.com/mlcdn/c45406/200522_83j6i00i2d71162835858678bd1ak_135x135.png_640x640.v1cAC.40.webp"
-					alt class="res_img" />
-					<div class="res_title">内衣</div>
-				</a>
-				<a href>
-					<img src="https://s10.mogucdn.com/mlcdn/c45406/200603_3d758dch4927437k44i197e464fg2_135x135.png_640x640.v1cAC.40.webp"
-					alt class="res_img" />
-					<div class="res_title">裙子</div>
-				</a>
-				<a href>
-					<img src="https://s10.mogucdn.com/mlcdn/c45406/200522_1h7l2kj43eh3dc331e24bcice6049_135x135.png_640x640.v1cAC.40.webp"
-					alt class="res_img" />
-					<div class="res_title">母婴/童装</div>
-				</a>
-				<a href>
-					<img src="https://s10.mogucdn.com/mlcdn/c45406/200522_0c62l5k76cc3851eg38clhl3bg7kk_135x135.png_640x640.v1cAC.40.webp"
-					alt class="res_img" />
-					<div class="res_title">套装</div>
-				</a>
-			</div>
-			<div class="res_wrap">
-				<a href>
-					<img src="https://s10.mogucdn.com/mlcdn/c45406/200522_6bi0de20c82j235dk66idd4jg822b_135x135.png_640x640.v1cAC.40.webp"
-					alt class="res_img" />
-					<div class="res_title">包包</div>
-				</a>
-				<a href>
-					<img src="https://s10.mogucdn.com/mlcdn/c45406/200522_1db4983di0al7b6c65jfkkg2c1e86_135x135.png_640x640.v1cAC.40.webp"
-					alt class="res_img" />
-					<div class="res_title">男装男鞋</div>
-				</a>
-				<a href>
-					<img src="https://s10.mogucdn.com/mlcdn/c45406/200522_82h9ehf1362d15lah03kf2ae5j62a_135x135.png_640x640.v1cAC.40.webp"
-					alt class="res_img" />
-					<div class="res_title">配饰</div>
-				</a>
-				<a href>
-					<img src="https://s10.mogucdn.com/mlcdn/c45406/200522_85b0ab13lb238i0614dc2a56gl26l_135x135.png_640x640.v1cAC.40.webp"
-					alt class="res_img" />
-					<div class="res_title">家居</div>
-				</a>
-				<a href>
-					<img src="https://s10.mogucdn.com/mlcdn/c45406/200603_6722ibl4gkc6bb2li4di4994kk082_135x135.png_640x640.v1cAC.40.webp"
-					alt class="res_img" />
-					<div class="res_title">运动</div>
-				</a>
-			</div>
-		</div>
-		<div class="like">
-			<h1><img src="https://s10.mogucdn.com/mlcdn/c45406/190426_4hlfgkc2ceaea67422ag73077lfce_1611x166.png_1200x9999.v1c7E.81.webp"
-				alt=""></h1>
-		</div>
-		<Mygoods></Mygoods>
-	</div>
-</template>
-
-<script>
-	export default {
-		components:{
-			Mygoods: () => import('../components/Mygoods.vue')
-		},
-		methods: {
-			closeTop() {
-				this.$refs.abc.style.display = "none";
-			},
-			onFocus() {
-				console.log("跳转至搜索页")
-			}
-		}
-	};
->>>>>>> 00f7f449a722256d5ef01115050993adbf79bd56
 </script>
 <style scoped>
 * {

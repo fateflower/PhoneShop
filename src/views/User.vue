@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <div class="user">
     <van-nav-bar title="个人资料" left-text="返回" left-arrow @click-left="onClickLeft" />
     <div class="box"></div>
@@ -17,7 +16,12 @@
         />
       </van-popup>
       <van-coupon-cell :coupons="coupons" :chosen-coupon="chosenCoupon" @click="showList = true" />
-      <van-popup v-model="showList" round position="bottom" style="height: 90%; padding-top: 4px;">
+      <van-popup
+        v-model="showList"
+        round
+        position="bottom"
+        style="height: 90%; padding-top: 0.25rem;"
+      >
         <van-coupon-list
           :coupons="coupons"
           :chosen-coupon="chosenCoupon"
@@ -54,38 +58,6 @@
     </van-cell-group>
     <van-button round type="info" size="large" color="#e54d42" @click="close">退出登录</van-button>
   </div>
-=======
-	<div class="user">
-		<van-nav-bar title="个人资料" left-text="返回" left-arrow @click-left="onClickLeft" />
-		<div class="box"></div>
-		<van-image round width="8rem" height="8rem" :src="imgUrl" />
-		<van-cell-group>
-			<van-cell title="昵称" isLink :value="nickName" />
-			<van-cell title="性别" isLink :value="sex" @click="sexshow = true" />
-			<van-popup v-model="sexshow" position="bottom" :style="{ height: '30%' }">
-				<van-picker title="性别" show-toolbar :columns="columns" @confirm="onConfirm" @cancel="onCancel" />
-			</van-popup>
-			<van-coupon-cell :coupons="coupons" :chosen-coupon="chosenCoupon" @click="showList = true" />
-			<van-popup v-model="showList" round position="bottom" style="height: 90%; padding-top: 0.25rem;">
-				<van-coupon-list :coupons="coupons" :chosen-coupon="chosenCoupon" :disabled-coupons="disabledCoupons" @change="onChange"
-				 @exchange="onExchange" />
-			</van-popup>
-			<van-cell title="生日" isLink :value="birthday" @click="showPopup" />
-			<van-popup v-model="show" position="bottom" :style="{ height: '30%' }">
-				<van-datetime-picker v-model="currentDate" type="date" title="选择年月日" :min-date="minDate" :max-date="maxDate"
-				 @cancel="cancel" @confirm="confirm" />
-			</van-popup>
-			<van-cell title="账号" isLink :value="userName" />
-			<van-cell title="个人简介" isLink :value="gerenTxt" @click="geren" />
-			<van-popup v-model="showtxt" position="bottom" :style="{ height: '50%' }">
-				<van-nav-bar title="个人简介" left-text="返回" right-text="保存" left-arrow @click-left="txtLeft" @click-right="onClickRight" />
-				<textarea rows="3" cols="20" v-model="txtVal" id="ipt" maxlength="50">
-		</textarea>
-			</van-popup>
-		</van-cell-group>
-		<van-button round type="info" size="large" color="#e54d42" @click="close">退出登录</van-button>
-	</div>
->>>>>>> 00f7f449a722256d5ef01115050993adbf79bd56
 </template>
 
 <script>
@@ -198,30 +170,22 @@ export default {
 </script>
 
 <style scoped>
-<<<<<<< HEAD
+html {
+  font-size: 100%;
+}
 .user {
   position: relative;
   overflow: hidden;
 }
-=======
-	html{
-		font-size: 100%;
-	}
-	.user {
-		position: relative;
-		overflow: hidden;
-	}
 
-	.box {
-		width: 100%;
-		height: 12.5rem;
-		background: url(../../public/233.jpg) no-repeat;
-		background-position-x: -5.125rem;
-		background-position-y: -7.5rem;
-		position: absolute;
-	}
->>>>>>> 00f7f449a722256d5ef01115050993adbf79bd56
-
+.box {
+  width: 100%;
+  height: 12.5rem;
+  background: url(../../public/233.jpg) no-repeat;
+  background-position-x: -5.125rem;
+  background-position-y: -7.5rem;
+  position: absolute;
+}
 .box {
   width: 100%;
   height: 12.5rem;
