@@ -183,7 +183,7 @@
               </a>
               <div class="jx">历史价格￥{{item.pre_price}}</div>
               <div class="price">￥{{item.price}}</div>
-              <button class="car">加入购物车</button>
+              <!-- <button class="car">加入购物车</button> -->
             </div>
           </dl>
           <!-- <h1 class="title">{{item.title}}</h1>
