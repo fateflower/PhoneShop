@@ -52,8 +52,8 @@
 					Notify("请阅读并勾选用户服务协议");
 				} else {
 					Toast.loading({
-					  message: '注册中...',
-					  forbidClick: true,
+						message: '注册中...',
+						forbidClick: true,
 					});
 					post("/api/v1/common/file_upload",this.data, {
 							headers: {
@@ -92,6 +92,8 @@
 								Notify("请上传头像");
 							}else if(err.toJSON().message == "Request failed with status code 413"){
 								Notify("图片过大，请更换其他图片进行上传");
+							}else{
+								Notify("err");
 							}
 						});
 

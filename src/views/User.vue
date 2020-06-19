@@ -10,7 +10,7 @@
 				<van-picker title="性别" show-toolbar :columns="columns" @confirm="onConfirm" @cancel="onCancel" />
 			</van-popup>
 			<van-coupon-cell :coupons="coupons" :chosen-coupon="chosenCoupon" @click="showList = true" />
-			<van-popup v-model="showList" round position="bottom" style="height: 90%; padding-top: 4px;">
+			<van-popup v-model="showList" round position="bottom" style="height: 90%; padding-top: 0.25rem;">
 				<van-coupon-list :coupons="coupons" :chosen-coupon="chosenCoupon" :disabled-coupons="disabledCoupons" @change="onChange"
 				 @exchange="onExchange" />
 			</van-popup>
@@ -142,6 +142,9 @@
 </script>
 
 <style scoped>
+	html{
+		font-size: 100%;
+	}
 	.user {
 		position: relative;
 		overflow: hidden;
@@ -151,8 +154,8 @@
 		width: 100%;
 		height: 12.5rem;
 		background: url(../../public/233.jpg) no-repeat;
-		background-position-x: -82px;
-		background-position-y: -120px;
+		background-position-x: -5.125rem;
+		background-position-y: -7.5rem;
 		position: absolute;
 	}
 

@@ -110,47 +110,14 @@
 			<h1><img src="https://s10.mogucdn.com/mlcdn/c45406/190426_4hlfgkc2ceaea67422ag73077lfce_1611x166.png_1200x9999.v1c7E.81.webp"
 				alt=""></h1>
 		</div>
-		<div class="hot">
-			<ul class="list">
-				<li v-for="item in list" :key="item._id">
-					<dl style="margin-top:10px;float:left">
-						<dt>
-							<a href="www">
-								<img class="tup" :src="item.img" alt />
-							</a>
-						</dt>
-						<div class="xq">
-							<a href="https://www.iliangcang.com/i/goods/?id=280069">
-								<div class="sm">{{item.intro}}</div>
-							</a>
-							<div class="jx">历史价格￥{{item.pre_price}}</div>
-							<div class="price">￥{{item.price}}</div>
-
-						</div>
-					</dl>
-				</li>
-			</ul>
-		</div>
+		<Mygoods></Mygoods>
 	</div>
 </template>
 
 <script>
-	import axios from "axios";
 	export default {
-		name: "Home",
-		data() {
-			return {
-				list: []
-			};
-		},
-		created() {
-			axios.get("http://192.168.18.65:3000/goods").then(res => {
-				console.log(res.data);
-				res = res.data;
-				if (res.code === 0) {
-					this.list = res.data;
-				}
-			});
+		components:{
+			Mygoods: () => import('../components/Mygoods.vue')
 		},
 		methods: {
 			closeTop() {
