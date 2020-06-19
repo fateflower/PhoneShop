@@ -233,7 +233,7 @@ main img {
 }
 .van-submit-bar__bar{
 	position: fixed;
-	bottom: 49px;
+	bottom: 3.125rem;
 	background-color: white;
 	width: 90%;
 	padding: 0 21px;

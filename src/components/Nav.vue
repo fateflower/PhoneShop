@@ -67,4 +67,7 @@
 .nav li.active {
   color: #d81e06;
 }
+.van-tabbar{
+	border-top: solid #DFDFDF 0.02rem;
+}
 </style>

@@ -56,6 +56,10 @@ Vue.use(VueRouter)
 	meta:{
 		hideNav:true
 	}
+  },{
+	  path:'/hou',
+	  name:'Hou',
+	  component:() => import("../views/Hou.vue"),
   }
 ]
 

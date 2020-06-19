@@ -23,7 +23,6 @@ export default {
       } else {
         this.hideNav = false;
       }
-	  console.log(this.$route)
       this.activeName = this.$route.name;
     }
   }
