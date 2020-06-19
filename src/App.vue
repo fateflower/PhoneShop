@@ -10,7 +10,7 @@ export default {
   data() {
     return {
       hideNav: false,
-      activeName:"Home"
+      activeName: "Home"
     };
   },
   components: {
@@ -36,6 +36,7 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+  
 }
 #app {
   display: flex;

@@ -1,36 +1,37 @@
 <template>
-	<div class="nav">	
-		<van-tabbar v-model="active" @change="onChange">
-		  <van-tabbar-item icon="wap-home-o" name="Home">首页</van-tabbar-item>
-		  <van-tabbar-item icon="fire-o" name="List">热卖</van-tabbar-item>
-		  <van-tabbar-item icon="cart-o" name="Cart">购物车</van-tabbar-item>
-		  <van-tabbar-item icon="user-circle-o" name="User">我的</van-tabbar-item>
-		</van-tabbar>
-	</div>
+  <div class="nav">
+    <van-tabbar v-model="active" @change="onChange">
+      <van-tabbar-item icon="wap-home-o" name="Home">首页</van-tabbar-item>
+      <van-tabbar-item icon="fire-o" name="List">热卖</van-tabbar-item>
+      <van-tabbar-item icon="cart-o" name="Cart">购物车</van-tabbar-item>
+      <van-tabbar-item icon="user-circle-o" name="User">我的</van-tabbar-item>
+    </van-tabbar>
+  </div>
 </template>
 
 <script>
-	
-	export default {
-		data() {
-			return {
-				active: "Home"
-			}
-		},
-		props:["activeName"],
-		watch:{
-			$route(){
-				this.active = this.activeName
-			}
-		},
-		methods:{
-			 onChange(index) {
-					this.$router.push({
-						name:this.active
-					}).catch(() => {})
-				},
-		}
-	}
+export default {
+  data() {
+    return {
+      active: "Home"
+    };
+  },
+  props: ["activeName"],
+  watch: {
+    $route() {
+      this.active = this.activeName;
+    }
+  },
+  methods: {
+    onChange(index) {
+      this.$router
+        .push({
+          name: this.active
+        })
+        .catch(() => {});
+    }
+  }
+};
 </script>
 
 <style scoped>
