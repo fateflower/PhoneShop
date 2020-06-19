@@ -183,7 +183,7 @@
               </a>
               <div class="jx">历史价格￥{{item.pre_price}}</div>
               <div class="price">￥{{item.price}}</div>
-              <!-- <button class="car">加入购物车</button> -->
+              <!-- <button class="car">加入购物车</button>W -->
             </div>
           </dl>
           <!-- <h1 class="title">{{item.title}}</h1>
@@ -224,7 +224,7 @@ export default {
     }
   },
   created() {
-    axios.get("http://localhost:3000/goods").then(res => {
+    axios.get("http://192.168.18.65:3000/goods").then(res => {
       console.log(res.data);
       res = res.data;
       if (res.code === 0) {
