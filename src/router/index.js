@@ -117,6 +117,11 @@ const routes = [{
 	name: 'Sousuor',
 	component: () => import("../dataa/Sousuo.vue")
 },
+{
+	path: '/listt',
+	name: 'Listt',
+	component: () => import("../views/Listt.vue")
+},
 
 ]
 

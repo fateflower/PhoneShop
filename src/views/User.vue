@@ -1,6 +1,13 @@
 <template>
   <div class="user">
-    <van-nav-bar title="个人资料" left-text="返回" left-arrow @click-left="onClickLeft" />
+    <van-nav-bar
+      title="个人资料"
+      left-text="返回"
+      left-arrow
+      @click-left="onClickLeft"
+      right-text="详情"
+      @click-right="onClickRight"
+    />
     <div class="box"></div>
     <van-image round width="8rem" height="8rem" :src="imgUrl" />
     <van-cell-group>
@@ -56,7 +63,14 @@
         <textarea rows="3" cols="20" v-model="txtVal" id="ipt" maxlength="50"></textarea>
       </van-popup>
     </van-cell-group>
-    <van-button round type="info" size="large" color="#e54d42" @click="close">退出登录</van-button>
+    <van-button
+      round
+      type="info"
+      size="large"
+      color="#e54d42"
+      @click="close"
+      style="margin-top:-5px"
+    >退出登录</van-button>
   </div>
 </template>
 
@@ -152,8 +166,9 @@ export default {
       this.txtVal = this.gerenTxt;
     },
     onClickRight() {
-      this.gerenTxt = this.txtVal;
-      this.showtxt = false;
+      this.$router.push({
+        name: "Yemian"
+      });
     },
     onConfirm(val) {
       this.sex = val;
